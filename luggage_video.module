@@ -13,16 +13,3 @@ function luggage_video_preprocess_node(&$vars) {
   }
   // end responsive videos
 }
-
-function luggage_video_ckeditor_plugin() {
-  return array(
-    'luggage_video' => array(
-      'name' => 'luggage_video',
-      'desc' => t('Luggage Video'),
-      'path' => drupal_get_path('module', 'luggage_video'). '/ckeditor/',
-      'buttons' => array(
-        'luggage_video' => array('label' => 'Video', 'icon' => 'icons/luggage_video.png'),
-      )
-    )
-  );
-}
