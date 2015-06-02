@@ -50,7 +50,7 @@ function luggage_video_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 11,
+      'weight' => 9,
     ),
   );
 
@@ -179,7 +179,7 @@ function luggage_video_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 8,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -232,7 +232,78 @@ function luggage_video_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 12,
+      'weight' => 10,
+    ),
+  );
+
+  // Exported field_instance: 'node-video-field_video_transcript'
+  $field_instances['node-video-field_video_transcript'] = array(
+    'bundle' => 'video',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Use this to provide a transcript for the video and/or an alternate URL for the video with descriptive audio. A good resource explaining accessability requirements for media: <a target="_blank" href="http://www.w3.org/2008/06/video-notes">http://www.w3.org/2008/06/video-notes</a>',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_video_transcript',
+    'label' => 'Transcript or Alternate URL',
+    'placeholder' => '',
+    'required' => 1,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'ds_code' => 'ds_code',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'plain_text' => 'plain_text',
+          'wysiwyg' => 'wysiwyg',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'ds_code' => array(
+              'weight' => 12,
+            ),
+            'filtered_html' => array(
+              'weight' => 0,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+            'wysiwyg' => array(
+              'weight' => 0,
+            ),
+          ),
+        ),
+      ),
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 8,
     ),
   );
 
@@ -252,7 +323,7 @@ function luggage_video_field_default_field_instances() {
           'video_style' => 'normal',
         ),
         'type' => 'video_embed_field',
-        'weight' => 1,
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -281,7 +352,7 @@ function luggage_video_field_default_field_instances() {
       'module' => 'video_embed_field',
       'settings' => array(),
       'type' => 'video_embed_field_video',
-      'weight' => 9,
+      'weight' => 7,
     ),
   );
 
@@ -292,6 +363,8 @@ function luggage_video_field_default_field_instances() {
   t('Image(s)');
   t('Images to embed into the body.');
   t('Tags');
+  t('Transcript or Alternate URL');
+  t('Use this to provide a transcript for the video and/or an alternate URL for the video with descriptive audio. A good resource explaining accessability requirements for media: <a target="_blank" href="http://www.w3.org/2008/06/video-notes">http://www.w3.org/2008/06/video-notes</a>');
   t('Video');
   t('Video Category');
 
