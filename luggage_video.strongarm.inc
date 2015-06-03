@@ -81,6 +81,7 @@ function luggage_video_strongarm() {
   $strongarm->name = 'node_options_video';
   $strongarm->value = array(
     0 => 'status',
+    1 => 'revision',
   );
   $export['node_options_video'] = $strongarm;
 
@@ -104,6 +105,16 @@ function luggage_video_strongarm() {
   $strongarm->name = 'pathauto_node_video_pattern';
   $strongarm->value = 'video/[node:title]';
   $export['pathauto_node_video_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'xmlsitemap_settings_node_video';
+  $strongarm->value = array(
+    'status' => '1',
+    'priority' => '0.5',
+  );
+  $export['xmlsitemap_settings_node_video'] = $strongarm;
 
   return $export;
 }

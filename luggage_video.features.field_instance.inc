@@ -312,7 +312,7 @@ function luggage_video_field_default_field_instances() {
     'bundle' => 'video',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Enter a URL from Vimeo or YouTube',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -341,7 +341,7 @@ function luggage_video_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_video_video',
     'label' => 'Video',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'description_field' => 0,
       'description_length' => 128,
@@ -360,6 +360,7 @@ function luggage_video_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Body');
   t('Category');
+  t('Enter a URL from Vimeo or YouTube');
   t('Image(s)');
   t('Images to embed into the body.');
   t('Tags');
