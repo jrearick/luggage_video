@@ -16,12 +16,6 @@
 }
 /* End responsive video */
 
-@media (min-width: 600px) {
-  .view-video .field-name-field-video-video {
-    float: left;
-  }
-}
-
 /* Hide transcript from sighted users */
 .field-name-field-video-transcript {
   position: absolute;

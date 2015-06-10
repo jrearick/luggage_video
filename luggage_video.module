@@ -13,11 +13,3 @@ function luggage_video_preprocess_node(&$vars) {
     drupal_add_css(drupal_get_path('module', 'luggage_video') . '/luggage_video.css');
   }
 }
-
-function luggage_video_preprocess_views_view(&$vars) {
-  $view = &$vars['view'];
-
-  if($view->name == 'video') {
-    drupal_add_css(drupal_get_path('module', 'luggage_video') . '/luggage_video.css');
-  }
-}

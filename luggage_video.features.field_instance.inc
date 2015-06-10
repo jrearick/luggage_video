@@ -561,9 +561,10 @@ function luggage_video_field_default_field_instances() {
         'settings' => array(
           'description' => 1,
           'description_position' => 'bottom',
-          'video_style' => 'normal',
+          'image_link' => 'content',
+          'image_style' => 'medium',
         ),
-        'type' => 'video_embed_field',
+        'type' => 'video_embed_field_thumbnail',
         'weight' => 0,
       ),
       'teaser' => array(
@@ -584,6 +585,10 @@ function luggage_video_field_default_field_instances() {
     'label' => 'Video',
     'required' => 1,
     'settings' => array(
+      'allowed_providers' => array(
+        0 => 'youtube',
+        1 => 'vimeo',
+      ),
       'description_field' => 0,
       'description_length' => 128,
       'user_register_form' => FALSE,
