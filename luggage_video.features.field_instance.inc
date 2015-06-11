@@ -586,8 +586,8 @@ function luggage_video_field_default_field_instances() {
     'required' => 1,
     'settings' => array(
       'allowed_providers' => array(
-        0 => 'youtube',
-        1 => 'vimeo',
+        'vimeo' => 'vimeo',
+        'youtube' => 'youtube',
       ),
       'description_field' => 0,
       'description_length' => 128,
