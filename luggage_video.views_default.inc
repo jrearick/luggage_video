@@ -161,12 +161,6 @@ function luggage_video_views_default_views() {
   $handler->display->display_options['fields']['field_video_category']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_video_category']['delta_offset'] = '0';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Post date */
-  $handler->display->display_options['sorts']['created']['id'] = 'created';
-  $handler->display->display_options['sorts']['created']['table'] = 'node';
-  $handler->display->display_options['sorts']['created']['field'] = 'created';
-  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  $handler->display->display_options['sorts']['created']['expose']['label'] = 'Post date';
   /* Sort criterion: Content: Title */
   $handler->display->display_options['sorts']['title']['id'] = 'title';
   $handler->display->display_options['sorts']['title']['table'] = 'node';
@@ -179,6 +173,12 @@ function luggage_video_views_default_views() {
   $handler->display->display_options['sorts']['field_video_category_tid']['field'] = 'field_video_category_tid';
   $handler->display->display_options['sorts']['field_video_category_tid']['exposed'] = TRUE;
   $handler->display->display_options['sorts']['field_video_category_tid']['expose']['label'] = 'Video Category';
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  $handler->display->display_options['sorts']['created']['expose']['label'] = 'Post date';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
