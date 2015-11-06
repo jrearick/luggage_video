@@ -10,7 +10,7 @@
 function luggage_video_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-video-body'
+  // Exported field_instance: 'node-video-body'.
   $field_instances['node-video-body'] = array(
     'bundle' => 'video',
     'default_value' => NULL,
@@ -77,7 +77,7 @@ function luggage_video_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-video-field_category'
+  // Exported field_instance: 'node-video-field_category'.
   $field_instances['node-video-field_category'] = array(
     'bundle' => 'video',
     'default_value' => NULL,
@@ -136,7 +136,7 @@ function luggage_video_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-video-field_tags'
+  // Exported field_instance: 'node-video-field_tags'.
   $field_instances['node-video-field_tags'] = array(
     'bundle' => 'video',
     'default_value' => NULL,
@@ -199,7 +199,7 @@ function luggage_video_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-video-field_video_category'
+  // Exported field_instance: 'node-video-field_video_category'.
   $field_instances['node-video-field_video_category'] = array(
     'bundle' => 'video',
     'default_value' => NULL,
@@ -258,7 +258,7 @@ function luggage_video_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-video-field_video_files'
+  // Exported field_instance: 'node-video-field_video_files'.
   $field_instances['node-video-field_video_files'] = array(
     'bundle' => 'video',
     'deleted' => 0,
@@ -339,7 +339,7 @@ function luggage_video_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-video-field_video_image'
+  // Exported field_instance: 'node-video-field_video_image'.
   $field_instances['node-video-field_video_image'] = array(
     'bundle' => 'video',
     'deleted' => 0,
@@ -428,7 +428,7 @@ function luggage_video_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-video-field_video_transcript'
+  // Exported field_instance: 'node-video-field_video_transcript'.
   $field_instances['node-video-field_video_transcript'] = array(
     'bundle' => 'video',
     'default_value' => NULL,
@@ -519,7 +519,7 @@ function luggage_video_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-video-field_video_video'
+  // Exported field_instance: 'node-video-field_video_video'.
   $field_instances['node-video-field_video_video'] = array(
     'bundle' => 'video',
     'default_value' => NULL,

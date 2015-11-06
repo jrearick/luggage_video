@@ -10,7 +10,7 @@
 function luggage_video_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_video_category'
+  // Exported field_base: 'field_video_category'.
   $field_bases['field_video_category'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -36,7 +36,7 @@ function luggage_video_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_video_files'
+  // Exported field_base: 'field_video_files'.
   $field_bases['field_video_files'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -59,7 +59,7 @@ function luggage_video_field_default_field_bases() {
     'type' => 'file',
   );
 
-  // Exported field_base: 'field_video_image'
+  // Exported field_base: 'field_video_image'.
   $field_bases['field_video_image'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -81,7 +81,7 @@ function luggage_video_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_video_transcript'
+  // Exported field_base: 'field_video_transcript'.
   $field_bases['field_video_transcript'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -100,7 +100,7 @@ function luggage_video_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_video_video'
+  // Exported field_base: 'field_video_video'.
   $field_bases['field_video_video'] = array(
     'active' => 1,
     'cardinality' => 1,

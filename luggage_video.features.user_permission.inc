@@ -24,7 +24,6 @@ function luggage_video_user_default_permissions() {
     'name' => 'delete any video content',
     'roles' => array(
       'content editor' => 'content editor',
-      'content publisher' => 'content publisher',
     ),
     'module' => 'node',
   );
@@ -43,7 +42,6 @@ function luggage_video_user_default_permissions() {
     'name' => 'edit any video content',
     'roles' => array(
       'content editor' => 'content editor',
-      'content publisher' => 'content publisher',
     ),
     'module' => 'node',
   );
