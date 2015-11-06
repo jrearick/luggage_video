@@ -433,7 +433,7 @@ function luggage_video_field_default_field_instances() {
     'bundle' => 'video',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Use this to provide a transcript for the video and/or an alternate URL for the video with descriptive audio. A good resource explaining accessability requirements for media: <a target="_blank" href="http://www.w3.org/2008/06/video-notes">http://www.w3.org/2008/06/video-notes</a>',
+    'description' => 'Use this to provide a transcript for the video and/or an alternate URL for the video with descriptive audio. A good resource explaining accessibility requirements for media: <a target="_blank" href="http://www.w3.org/2008/06/video-notes">http://www.w3.org/2008/06/video-notes</a>',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -612,7 +612,7 @@ function luggage_video_field_default_field_instances() {
   t('Images to embed into the body.');
   t('Tags');
   t('Transcript or Alternate URL');
-  t('Use this to provide a transcript for the video and/or an alternate URL for the video with descriptive audio. A good resource explaining accessability requirements for media: <a target="_blank" href="http://www.w3.org/2008/06/video-notes">http://www.w3.org/2008/06/video-notes</a>');
+  t('Use this to provide a transcript for the video and/or an alternate URL for the video with descriptive audio. A good resource explaining accessibility requirements for media: <a target="_blank" href="http://www.w3.org/2008/06/video-notes">http://www.w3.org/2008/06/video-notes</a>');
   t('Video');
   t('Video Category');
 
