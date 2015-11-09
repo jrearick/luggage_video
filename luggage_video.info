@@ -1,4 +1,4 @@
-name = Luggage Video
+name = luggage_video
 description = Video support in Luggage
 core = 7.x
 package = Luggage

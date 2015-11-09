@@ -173,9 +173,11 @@ function luggage_video_views_default_views() {
   $handler->display->display_options['filters']['field_video_video_video_data']['field'] = 'field_video_video_video_data';
   $handler->display->display_options['filters']['field_video_video_video_data']['operator'] = 'not empty';
   $handler->display->display_options['path'] = 'video';
-  $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Videos';
+  $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['name'] = 'main-menu';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
   $export['video'] = $view;
 
   return $export;
