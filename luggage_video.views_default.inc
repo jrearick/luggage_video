@@ -45,6 +45,11 @@ function luggage_video_views_default_views() {
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Sort criterion: Content: Title */
+  $handler->display->display_options['sorts']['title']['id'] = 'title';
+  $handler->display->display_options['sorts']['title']['table'] = 'node';
+  $handler->display->display_options['sorts']['title']['field'] = 'title';
+  $handler->display->display_options['sorts']['title']['expose']['label'] = 'Title';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -153,32 +158,6 @@ function luggage_video_views_default_views() {
   $handler->display->display_options['fields']['nothing']['label'] = 'Title';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '[title]<br />
 [body]';
-  /* Field: Content: Video Category */
-  $handler->display->display_options['fields']['field_video_category']['id'] = 'field_video_category';
-  $handler->display->display_options['fields']['field_video_category']['table'] = 'field_data_field_video_category';
-  $handler->display->display_options['fields']['field_video_category']['field'] = 'field_video_category';
-  $handler->display->display_options['fields']['field_video_category']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_video_category']['type'] = 'taxonomy_term_reference_plain';
-  $handler->display->display_options['fields']['field_video_category']['delta_offset'] = '0';
-  $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Title */
-  $handler->display->display_options['sorts']['title']['id'] = 'title';
-  $handler->display->display_options['sorts']['title']['table'] = 'node';
-  $handler->display->display_options['sorts']['title']['field'] = 'title';
-  $handler->display->display_options['sorts']['title']['exposed'] = TRUE;
-  $handler->display->display_options['sorts']['title']['expose']['label'] = 'Title';
-  /* Sort criterion: Content: Video Category (field_video_category) */
-  $handler->display->display_options['sorts']['field_video_category_tid']['id'] = 'field_video_category_tid';
-  $handler->display->display_options['sorts']['field_video_category_tid']['table'] = 'field_data_field_video_category';
-  $handler->display->display_options['sorts']['field_video_category_tid']['field'] = 'field_video_category_tid';
-  $handler->display->display_options['sorts']['field_video_category_tid']['exposed'] = TRUE;
-  $handler->display->display_options['sorts']['field_video_category_tid']['expose']['label'] = 'Video Category';
-  /* Sort criterion: Content: Post date */
-  $handler->display->display_options['sorts']['created']['id'] = 'created';
-  $handler->display->display_options['sorts']['created']['table'] = 'node';
-  $handler->display->display_options['sorts']['created']['field'] = 'created';
-  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  $handler->display->display_options['sorts']['created']['expose']['label'] = 'Post date';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -188,38 +167,11 @@ function luggage_video_views_default_views() {
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'video' => 'video',
-  );
-  /* Filter criterion: Content: Video Category (field_video_category) */
-  $handler->display->display_options['filters']['field_video_category_tid']['id'] = 'field_video_category_tid';
-  $handler->display->display_options['filters']['field_video_category_tid']['table'] = 'field_data_field_video_category';
-  $handler->display->display_options['filters']['field_video_category_tid']['field'] = 'field_video_category_tid';
-  $handler->display->display_options['filters']['field_video_category_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_video_category_tid']['expose']['operator_id'] = 'field_video_category_tid_op';
-  $handler->display->display_options['filters']['field_video_category_tid']['expose']['label'] = 'Video Category';
-  $handler->display->display_options['filters']['field_video_category_tid']['expose']['operator'] = 'field_video_category_tid_op';
-  $handler->display->display_options['filters']['field_video_category_tid']['expose']['identifier'] = 'field_video_category_tid';
-  $handler->display->display_options['filters']['field_video_category_tid']['expose']['multiple'] = TRUE;
-  $handler->display->display_options['filters']['field_video_category_tid']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    4 => 0,
-    5 => 0,
-    3 => 0,
-    7 => 0,
-    6 => 0,
-    10 => 0,
-    9 => 0,
-    11 => 0,
-    8 => 0,
-  );
-  $handler->display->display_options['filters']['field_video_category_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_video_category_tid']['vocabulary'] = 'video_category';
+  /* Filter criterion: Content: Video (field_video_video:video_data) */
+  $handler->display->display_options['filters']['field_video_video_video_data']['id'] = 'field_video_video_video_data';
+  $handler->display->display_options['filters']['field_video_video_video_data']['table'] = 'field_data_field_video_video';
+  $handler->display->display_options['filters']['field_video_video_video_data']['field'] = 'field_video_video_video_data';
+  $handler->display->display_options['filters']['field_video_video_video_data']['operator'] = 'not empty';
   $handler->display->display_options['path'] = 'video';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Videos';
