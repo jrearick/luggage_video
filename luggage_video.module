@@ -8,4 +8,5 @@ include_once 'luggage_video.features.inc';
 
 function luggage_video_preprocess_node(&$vars) {
   drupal_add_css(drupal_get_path('module', 'luggage_video') . '/luggage_video.css');
+  drupal_add_js(drupal_get_path('module', 'luggage_video') . '/js/luggage_video.js');
 }
