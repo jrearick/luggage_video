@@ -24,6 +24,15 @@ function luggage_video_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 2,
       ),
+      'frontpanel' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(
+          'trim_length' => 600,
+        ),
+        'type' => 'text_summary_or_trimmed',
+        'weight' => 1,
+      ),
       'full' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -91,6 +100,12 @@ function luggage_video_field_default_field_instances() {
         'type' => 'taxonomy_term_reference_link',
         'weight' => 4,
       ),
+      'frontpanel' => array(
+        'label' => 'inline',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
+      ),
       'full' => array(
         'label' => 'inline',
         'module' => 'taxonomy',
@@ -148,6 +163,12 @@ function luggage_video_field_default_field_instances() {
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
         'weight' => 5,
+      ),
+      'frontpanel' => array(
+        'label' => 'inline',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
       ),
       'full' => array(
         'label' => 'inline',
@@ -208,6 +229,12 @@ function luggage_video_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 6,
+      ),
+      'frontpanel' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 5,
       ),
       'full' => array(
         'label' => 'above',
@@ -289,6 +316,12 @@ function luggage_video_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 7,
+      ),
+      'frontpanel' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 6,
       ),
       'full' => array(
         'label' => 'above',
@@ -380,6 +413,12 @@ function luggage_video_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 1,
+      ),
+      'frontpanel' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
       ),
       'full' => array(
         'label' => 'above',
@@ -474,6 +513,18 @@ function luggage_video_field_default_field_instances() {
           'video_style' => 'normal',
         ),
         'type' => 'video_embed_field',
+        'weight' => 0,
+      ),
+      'frontpanel' => array(
+        'label' => 'hidden',
+        'module' => 'video_embed_field',
+        'settings' => array(
+          'description' => 1,
+          'description_position' => 'bottom',
+          'image_link' => 'source',
+          'image_style' => 'medium',
+        ),
+        'type' => 'video_embed_field_thumbnail',
         'weight' => 0,
       ),
       'full' => array(
