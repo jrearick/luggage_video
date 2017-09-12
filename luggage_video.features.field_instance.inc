@@ -34,7 +34,7 @@ function luggage_video_field_default_field_instances() {
         'weight' => 1,
       ),
       'full' => array(
-        'label' => 'hidden',
+        'label' => 'above',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
