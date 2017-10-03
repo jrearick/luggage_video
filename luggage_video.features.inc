@@ -31,7 +31,7 @@ function luggage_video_node_info() {
     'video' => array(
       'name' => t('Video'),
       'base' => 'node_content',
-      'description' => t('A YouTube or Vimeo video.'),
+      'description' => t('Share videos hosted on YouTube or Vimeo.'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',
