@@ -9,3 +9,102 @@ include_once 'luggage_video.features.inc';
 function luggage_video_preprocess_node(&$vars) {
   drupal_add_css(drupal_get_path('module', 'luggage_video') . '/luggage_video.css');
 }
+
+/**
+ * Implements hook_video_embed_handler_info_alter
+ */
+function luggage_video_video_embed_handler_info_alter(&$handlers) {
+  $handlers['youtube']['function'] = '_luggage_video_video_embed_field_handle_youtube';
+  $handlers['vimeo']['function'] = '_luggage_video_video_embed_field_handle_vimeo';
+}
+/**
+ * Handler for Youtube videos. Copied from the video_embed_field so that we could override with our own settings.
+ *
+ * @param string $url
+ *   The video URL.
+ * @param array $settings
+ *   The settings array.
+ *
+ * @return array
+ *   The video iframe render array.
+ */
+function _luggage_video_video_embed_field_handle_youtube($url, $settings) {
+  $output = array();
+
+  if(preg_match('/#t=((?P<min>\d+)m)?((?P<sec>\d+)s)?((?P<tinsec>\d+))?/', $url, $matches)){
+    if(isset($matches['tinsec'])){
+      $settings['start'] = $matches['tinsec']; // url already in form #t=125 for 2 minutes and 5 seconds
+    } else {
+      // url in form #t=2m5s or with other useless data, this is why we still keep adding the default data..
+      // give it some default data in case there is no #t=...
+      $matches += array(
+        "min" => 0,
+        "sec" => 0,
+      );
+      if ($time = ($matches["min"] * 60) + $matches["sec"]) {
+        $settings['start'] = $time;
+      }
+    }
+  }
+
+  $id = _video_embed_field_get_youtube_id($url);
+  if (!$id) {
+    // We can't decode the URL - just return the URL as a link.
+    $output['#markup'] = l($url, $url);
+    return $output;
+  }
+
+  // Add class to variable to avoid adding it to URL param string.
+  $class = $settings['class'];
+  unset($settings['class']);
+
+  // Construct the embed code.
+  $settings['wmode'] = 'opaque';
+  $settings_str = urlencode(_video_embed_code_get_settings_str($settings));
+
+  $output['#markup'] = '<iframe title="' . drupal_get_title() . '" class="' . check_plain($class) . '" width="' . check_plain($settings['width']) . '" height="' . check_plain($settings['height']) . '" src="//www.youtube.com/embed/' . $id . '?' . $settings_str . '" allowfullscreen></iframe>';
+
+  return $output;
+}
+
+/**
+ * Handler for Vimeo videos. Copied from the video_embed_field so that we could override with our own settings.
+ *
+ * @param string $url
+ *   The video URL.
+ * @param array $settings
+ *   The settings array.
+ *
+ * @return string
+ *   The video iframe.
+ */
+function _luggage_video_video_embed_field_handle_vimeo($url, $settings) {
+  $vimeo_data = _video_embed_field_get_vimeo_data($url);
+
+  // Get ID of video from URL.
+  $id = _video_embed_field_get_vimeo_id($vimeo_data);
+
+  if (empty($id)) {
+    return array(
+      '#markup' => l($url, $url),
+    );
+  }
+
+  // Construct the embed code.
+  $settings['player_id'] = drupal_html_id('vimeo-' . $id);
+  if (!empty($settings['froogaloop'])) {
+    $settings['api'] = 1;
+  }
+  unset($settings['froogaloop']);
+
+  // Add class to variable to avoid adding it to URL param string.
+  $class = $settings['class'];
+  unset($settings['class']);
+
+  $settings_str = _video_embed_code_get_settings_str($settings);
+
+  return array(
+    '#markup' => '<iframe title="' . drupal_get_title() . '" class="' . check_plain($class) . '" id="' . $settings['player_id'] . '" width="' . check_plain($settings['width']) . '" height="' . check_plain($settings['height']) . '" src="//player.vimeo.com/video/' . $id .
+      '?' . $settings_str . '" webkitAllowFullScreen mozallowfullscreen allowfullscreen></iframe>',
+  );
+}
